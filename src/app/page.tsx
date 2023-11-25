@@ -59,7 +59,7 @@ export default async function Page() {
   )
 }
 
-export function getRandomTracksFromPlaylist(
+function getRandomTracksFromPlaylist(
   { playlist, amount }: { playlist: SpotifyApi.SinglePlaylistResponse, amount: number }
 ) {
 
