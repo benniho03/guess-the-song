@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 
+import { ClerkProvider } from "@clerk/nextjs";
 import { TRPCReactProvider } from "@/trpc/react";
 
 const inter = Inter({
@@ -25,7 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider cookies={cookies().toString()}>
-          {children}
+          <ClerkProvider>
+            <script src="https://sdk.scdn.co/spotify-player.js"></script>
+            {children}
+          </ClerkProvider>
         </TRPCReactProvider>
       </body>
     </html>
