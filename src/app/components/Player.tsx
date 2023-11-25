@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function Player({ token }: { token: string }) {
+export default async function Player({ token }: { token: string }) {
 
     useEffect(() => {
         setWindow(window)
@@ -46,7 +46,7 @@ export default function Player({ token }: { token: string }) {
         console.error(message);
     });
 
-    player.connect()
+    await player.connect()
 
     return (
         <div>
